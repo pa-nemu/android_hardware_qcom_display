@@ -311,6 +311,11 @@ static void GetDRMFormat(LayerBufferFormat format, uint32_t *drm_format,
   }
 }
 
+// Preserve the original constructor ABI for common extension clients.
+FrameBufferObject::FrameBufferObject(uint32_t fb_id, LayerBufferFormat format, uint32_t width,
+                                     uint32_t height, bool shallow)
+    : FrameBufferObject(fb_id, format, width, height, shallow, false) {}
+
 FrameBufferObject::FrameBufferObject(uint32_t fb_id, LayerBufferFormat format, uint32_t width,
                                      uint32_t height, bool shallow, bool secure)
     : fb_id_(fb_id),
@@ -337,6 +342,11 @@ FrameBufferObject::~FrameBufferObject() {
 
 uint32_t FrameBufferObject::GetFbId() {
   return fb_id_;
+}
+
+bool FrameBufferObject::IsEqual(LayerBufferFormat format, uint32_t width, uint32_t height) {
+  // Legacy callers cannot describe secure state. Do not match secure objects.
+  return IsEqual(format, width, height, false);
 }
 
 bool FrameBufferObject::IsEqual(LayerBufferFormat format, uint32_t width, uint32_t height,

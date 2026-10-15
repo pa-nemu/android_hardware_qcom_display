@@ -1055,9 +1055,12 @@ struct Resolution {
 class FrameBufferObject : public LayerBufferObject {
  public:
   explicit FrameBufferObject(uint32_t fb_id, LayerBufferFormat format, uint32_t width,
-                             uint32_t height, bool shallow = false, bool secure = false);
+                             uint32_t height, bool shallow = false);
+  FrameBufferObject(uint32_t fb_id, LayerBufferFormat format, uint32_t width,
+                    uint32_t height, bool shallow, bool secure);
   ~FrameBufferObject();
   uint32_t GetFbId();
+  bool IsEqual(LayerBufferFormat format, uint32_t width, uint32_t height);
   bool IsEqual(LayerBufferFormat format, uint32_t width, uint32_t height, bool secure);
 
  private:
