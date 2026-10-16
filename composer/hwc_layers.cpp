@@ -862,7 +862,8 @@ HWC3::Error HWCLayer::SetLayerBrightness(float brightness) {
   }
 
 #ifdef SDM_COMMON_KAILUA_ABI
-  return HWC3::Error::Unsupported;
+  // Neutral brightness requires no SDM state change or dimming support.
+  return brightness == 1.0f ? HWC3::Error::None : HWC3::Error::Unsupported;
 #else
   // When SDR dimming is disabled, layer brightness needs to be reset for device composition
   if (brightness != 1.0f && IsSdrDimmingDisabled() && client_requested_ == Composition::DEVICE) {
