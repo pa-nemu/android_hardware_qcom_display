@@ -1,0 +1,416 @@
+{
+  "repository": "https://github.com/AOSPA/android_hardware_qcom_display",
+  "commit": "d40d593a63a56ae7a7e9616518c7158fbb27e447",
+  "branch": "vauxite-8550",
+  "purpose": "Common LA.VENDOR.13.2.6 KAILUA SDM private ABI; current AIDL composer, gralloc and platform DRM remain selected",
+  "files": [
+    {
+      "path": "include/private/demura_parser_manager_intf.h",
+      "sha256": "611a7433abc3f11659bebc67ad1888787424a4e6358137731700f785b2ef8464"
+    },
+    {
+      "path": "include/private/color_params.h",
+      "sha256": "588a7fa63bc967ae178baae5276a20209e1dab4995462e680bd09f11b7a39a79"
+    },
+    {
+      "path": "include/private/hw_info_types.h",
+      "sha256": "e6bf7a7c1bbd73e05b6cd0e65e894b119b5b297f239dd7daa9406a4ddbe8c50c"
+    },
+    {
+      "path": "include/private/panel_feature_property_intf.h",
+      "sha256": "faf227ee6803dd22936f789cda5c956a7729adfceb4e60c5f488aa0038982483"
+    },
+    {
+      "path": "include/private/rc_intf.h",
+      "sha256": "f307fb8bd59bf796c5eebc3ef7ff5004596d37fd55c47a136ef1e74280601260"
+    },
+    {
+      "path": "include/private/demuratn_core_uvm_intf.h",
+      "sha256": "ea52464fcf96305a30e622618cf194e61c57a86bc0b5ea2a5de155cb5a29028e"
+    },
+    {
+      "path": "include/private/hw_events_interface.h",
+      "sha256": "41c281bf4a7a98d5573f8ae80e054cdeaf848b67de1a2b10c2c0deea42369f18"
+    },
+    {
+      "path": "include/private/strategy_interface.h",
+      "sha256": "3636a1497b4d1ddab6e1cc97a0e87e86c157c18d12357f175a7c80d4a55883ad"
+    },
+    {
+      "path": "include/private/extension_interface.h",
+      "sha256": "e7be862c8517df327f0ebaa31d013dc51ae31735ac8f8c82d786db6d8d851fa2"
+    },
+    {
+      "path": "include/private/demura_intf.h",
+      "sha256": "32753b97e4936062d7a8fea64b2fe67ed767da35cebcd9492f1067d1105e2ecf"
+    },
+    {
+      "path": "include/private/generic_payload.h",
+      "sha256": "8fc6dcc965daa9729bc949c1589d6020538a27d534449bac54bbb08851dc0538"
+    },
+    {
+      "path": "include/private/color_interface.h",
+      "sha256": "df0dda7f0c8ff0cd95e77a1c969aaa466937008f818a7a7cb63a03688d348107"
+    },
+    {
+      "path": "include/private/snapdragon_color_intf.h",
+      "sha256": "7701e47c40df4752fc5da1e9ed22145a9f05f9477150da3aac3437f519d85929"
+    },
+    {
+      "path": "include/private/layer_feedback.h",
+      "sha256": "2629b2818c4759124f0931401983595cfc2b1ef39687ac410c1e5f337f89bbd5"
+    },
+    {
+      "path": "include/private/feature_license_intf.h",
+      "sha256": "a0c8ca86004f5b75030032fdf6b7f55bc40b89a681d28e2e00f2d416a3ab0179"
+    },
+    {
+      "path": "include/private/resource_interface.h",
+      "sha256": "6993523b3ee32e23378f01ed6dbeff9329f516cc6e8571ab2265f403087c486b"
+    },
+    {
+      "path": "include/private/capabilities_interface.h",
+      "sha256": "694dd2b024f1463e41b72cbe16f3c1b023fa01cedfb75723499b3f51dc75bf67"
+    },
+    {
+      "path": "include/private/demuratn_core_uvm_fact_intf.h",
+      "sha256": "4354f1bf3576b952c85b12da7a89b952ded3176ba40e9ed678b74c4b18e0a62f"
+    },
+    {
+      "path": "include/private/hw_info_interface.h",
+      "sha256": "a5748668687f56871900a8af9858f497d86c634cd61817078e4385687ac03a45"
+    },
+    {
+      "path": "include/private/utils_factory_intf.h",
+      "sha256": "27ed4b547193fbb1a549fb72a5374a26dfe0de0520a19d30f3230f31885e32fc"
+    },
+    {
+      "path": "include/private/noise_plugin_dbg.h",
+      "sha256": "203d2607d298de733e848e2aa410a7a05caf7a40d9c677d56bec171506bdf5ff"
+    },
+    {
+      "path": "include/private/panel_feature_factory_intf.h",
+      "sha256": "d2d15e9f88b117e77e68fae728cfa6ea447e45c308ab52202f57d25712292120"
+    },
+    {
+      "path": "include/private/noise_plugin_intf.h",
+      "sha256": "ed303f0706683b1932913c73861604e18abbab8e753c6248833281514a2e0a2d"
+    },
+    {
+      "path": "include/private/hw_interface.h",
+      "sha256": "8427968c61a3ca897ec941571539d90652bb7b40cbb1dbc826a0a262d0342dc0"
+    },
+    {
+      "path": "include/private/generic_intf.h",
+      "sha256": "9a1a76d628bba36923f23b81cafab316a858a9fac16e47e7d8a6a3f3b2bb4eee"
+    },
+    {
+      "path": "include/private/spr_intf.h",
+      "sha256": "27f02c581a538f9ff5719bc70978a32799df02dda0cb4430ce663618eac44169"
+    },
+    {
+      "path": "include/private/cwb_manager_interface.h",
+      "sha256": "10504702f590ab993497c8f0ef3e66ea7242783078ed344927ababbe29cf63ac"
+    },
+    {
+      "path": "include/private/partial_update_interface.h",
+      "sha256": "bfd26c7dd4e0877f01d60229932733581453a6f5afa732400cda067300f3c2f1"
+    },
+    {
+      "path": "include/private/noise_algo_intf.h",
+      "sha256": "3dd82ab91ffe2df666298e87c450abae0fcedeb3bc3ee54d5ee2279996641d0a"
+    },
+    {
+      "path": "include/utils/rect.h",
+      "sha256": "abb1d30168dad4524400f528975fa00c3863c522880331fb6de45dba43933385"
+    },
+    {
+      "path": "include/utils/locker.h",
+      "sha256": "edacf22070b2ea00d8bb7f183255db2f17561ae541020e254a203aedd72cc550"
+    },
+    {
+      "path": "include/utils/fence.h",
+      "sha256": "20476ebfe8574ffc5167ab5c733e4cb30904ebf92a9b3bb9025dfd8d68b2ae9a"
+    },
+    {
+      "path": "include/utils/formats.h",
+      "sha256": "2ea5e5e6d3db55eaeb53ca648ba761d6761895197cb2083d3697689aee86d32b"
+    },
+    {
+      "path": "include/utils/factory.h",
+      "sha256": "2cd9d43978199d221cc53ad2289c2c63627d59daa67e82e4537fc59a1fbc99d4"
+    },
+    {
+      "path": "include/utils/sync_task.h",
+      "sha256": "ad1a9f63d9b93a469be793e6fa12157277d3b407a7fbaf52c5c6570fc2b94806"
+    },
+    {
+      "path": "include/utils/debug.h",
+      "sha256": "d4315bfb5cad3b6363f7c2741cb0d2d55138476c2103604d26b2a93faca197ea"
+    },
+    {
+      "path": "include/utils/utils.h",
+      "sha256": "dfd64a4f875cfcc9fe5af158c557a1713f3110f45c186ece86689c524fbdc936"
+    },
+    {
+      "path": "include/utils/constants.h",
+      "sha256": "e2b890aa5902dee4ba729c2791d14532d2decf1cc97a44b97421f6ddfa6d3e1c"
+    },
+    {
+      "path": "include/utils/sys.h",
+      "sha256": "1b5ecd1755c307036a70a18bdf62e0ad172fbe11899f75336c1c591a4e8ca1a6"
+    },
+    {
+      "path": "include/core/core_interface.h",
+      "sha256": "ef0d494f529cdf2e841b8be3f9976c3e05f7b2c615b98f03d9d36775457bab69"
+    },
+    {
+      "path": "include/core/buffer_sync_handler.h",
+      "sha256": "c58858398ea08b155f7073afc6eeb0532424ea8f6c5f8f8c79641a0063a2520b"
+    },
+    {
+      "path": "include/core/display_interface.h",
+      "sha256": "279105c11e2f0aaa7a40f461ec63ec7bc19d6a0b61b49c6d2d044156adc2664b"
+    },
+    {
+      "path": "include/core/layer_stack.h",
+      "sha256": "3c415b0006f676c5fa810baa1b2cdfa24b924bd66c97a7f690cb163a78fb97d1"
+    },
+    {
+      "path": "include/core/socket_handler.h",
+      "sha256": "7c8ad5d75fd47743efa45391b83ab9025a60db60c3ae95e79dfe89e3ab08733c"
+    },
+    {
+      "path": "include/core/sdm_types.h",
+      "sha256": "ac7de4e90cf472af19c0eb70e8e0c446b9343e42bf52a079ad4f9cd551011e4e"
+    },
+    {
+      "path": "include/core/buffer_allocator.h",
+      "sha256": "bce9f86cc3603238a385be8c7cbcdf36ae8f899d471376902ce706bce9596afe"
+    },
+    {
+      "path": "include/core/layer_buffer.h",
+      "sha256": "d6695011b2e031e351d0490ab26999510a4e2f79a74e1e670482e5763ac28d2e"
+    },
+    {
+      "path": "include/core/ipc_interface.h",
+      "sha256": "075a1df235f373cf3def1085255268efbb95ff658a5246870be52d1c446587b9"
+    },
+    {
+      "path": "include/core/dpps_interface.h",
+      "sha256": "e2830dbaa7734dd97c070c2a406650aa771c3adfe13eb48d3edef8f925de50fe"
+    },
+    {
+      "path": "libs/utils/fence.cpp",
+      "sha256": "f401d1cbd87dc95ca3fdfaec626c56953332299a0b0850fabe08df8d9ddda403"
+    },
+    {
+      "path": "libs/utils/sys.cpp",
+      "sha256": "b90829726c9e7564822c567d6ef29ebc2d66fa02c05107a10eb497e91e60ddcc"
+    },
+    {
+      "path": "libs/utils/rect.cpp",
+      "sha256": "7c331571dc86ddfbfd9f0b44cfe2b93b803b81225cc1f79d8f144921601ff028"
+    },
+    {
+      "path": "libs/utils/formats.cpp",
+      "sha256": "12142471a8037f18ae9ee9fc4650b782e935ef871c4bf9d8176249e929cbc8bd"
+    },
+    {
+      "path": "libs/utils/Makefile.am",
+      "sha256": "e87ac682a8dc9ae0a13b6dfaf0e61a897a1e7b40c7a72edc3f0bcee3bb4538d2"
+    },
+    {
+      "path": "libs/utils/utils.cpp",
+      "sha256": "5abdb574ba30f4d266d328af20ba3160352626a6cca072a69449723f5aa6288a"
+    },
+    {
+      "path": "libs/utils/debug.cpp",
+      "sha256": "b86eb02ece7b7c32e9fe94a7309dd24397a41b3132fdb021f801307627b4f58a"
+    },
+    {
+      "path": "libs/core/resource_default.cpp",
+      "sha256": "286a7e4aed6784e6508ac6649b88c8f8c32865c15a78a7fb03a4dee267c1b0e7"
+    },
+    {
+      "path": "libs/core/display_base.cpp",
+      "sha256": "6f47ba89ac2256931bd0aeaee93623796700cf071fb42fa0be32b8d089e3b913"
+    },
+    {
+      "path": "libs/core/display_pluggable.cpp",
+      "sha256": "2dbca7c892fc8b9bd782dfa1cb2ee86dd49a3211760c3f00a52947d08ee83ee5"
+    },
+    {
+      "path": "libs/core/hw_info_default.h",
+      "sha256": "2c7b2f855b04f85206a6baedb76bb2d6674cb02a1f6f88578ab7879410cdeeeb"
+    },
+    {
+      "path": "libs/core/display_builtin.h",
+      "sha256": "e4b5764d2a0ede144a70245bd3d8567f9e4004089949bf1a7023a928857a9811"
+    },
+    {
+      "path": "libs/core/strategy.h",
+      "sha256": "d50af74b794e6d45b81466920280223e997543025d870a35fe8143eed39fe804"
+    },
+    {
+      "path": "libs/core/core_interface.cpp",
+      "sha256": "c388bba8efbc600d121841342dfd635517b590f26327035058efb94ad07a1f9e"
+    },
+    {
+      "path": "libs/core/display_pluggable.h",
+      "sha256": "6928be007529356d48d97312ba334da673770cf9d4ee1df887ecf03b757b3c98"
+    },
+    {
+      "path": "libs/core/display_null.cpp",
+      "sha256": "d7315ab4cbbabbe172f9da9f61870a5ddf22492d572914118f165980cdd20829"
+    },
+    {
+      "path": "libs/core/color_manager.cpp",
+      "sha256": "5f9da1ae4422d30163caafa80843fb47e5ff9e783017b7d9cb24ac2628b49812"
+    },
+    {
+      "path": "libs/core/comp_manager.cpp",
+      "sha256": "30f842d6bc0da6778caf8fe6e529f695edd27b2660a56cc4b8d77efae2d2fcd8"
+    },
+    {
+      "path": "libs/core/display_virtual.cpp",
+      "sha256": "e1569f60bc2ab74f64537dd51ac20d3cf98bc427c0749b9eee823cc95677f080"
+    },
+    {
+      "path": "libs/core/noise_plugin_intf_impl.h",
+      "sha256": "37c304d55fb9c528373d3ef76c51db28161ff203ed705b1792bb2694b618045d"
+    },
+    {
+      "path": "libs/core/display_virtual.h",
+      "sha256": "81fb60b9cf1291ea7562e351dc5fa951d06904f257f31e6399b5d75d1c31029f"
+    },
+    {
+      "path": "libs/core/Makefile.am",
+      "sha256": "2b474ba296ddcd590bb4d36b4273c070df4ae2b680a9c48ae09dd97f7a092f8a"
+    },
+    {
+      "path": "libs/core/core_impl.cpp",
+      "sha256": "a96b2310c97effb857059e70ab4b2a348a2547bddb1d76219f0eac6b90c1734f"
+    },
+    {
+      "path": "libs/core/core_impl.h",
+      "sha256": "70931444c542e8f9c7a07ce8f595cdcd7fbdd5a6b31c60fb47fd76173660eaa8"
+    },
+    {
+      "path": "libs/core/display_builtin.cpp",
+      "sha256": "10b8ce35dbe8a9553e295b8f083eae54c42588a58443d49a9dee39187248f6ac"
+    },
+    {
+      "path": "libs/core/comp_manager.h",
+      "sha256": "c2e506603320b85896857c5712dc38276787e7b40cc78af90a0ff434665e3fc9"
+    },
+    {
+      "path": "libs/core/resource_default.h",
+      "sha256": "bec4592e7436e1a80579dde6ee3b9f2296770d18bb540b489ee198d9ece7cd20"
+    },
+    {
+      "path": "libs/core/strategy.cpp",
+      "sha256": "b682c0b5ad99aca1bdca7717d3cadfaff32f87f7ae1f957c7de64e71be908f98"
+    },
+    {
+      "path": "libs/core/display_base.h",
+      "sha256": "1b278c515f5a14628cc0f1e431a8d463e83d19ed762f09d7fd49b8e610fdc4f4"
+    },
+    {
+      "path": "libs/core/color_manager.h",
+      "sha256": "a5f25175d8921a354862a0fb6e317aae4b196a003470e8456c1868960363f933"
+    },
+    {
+      "path": "libs/core/display_null.h",
+      "sha256": "a40e0b47ba21b407a9418b86212d348d15435cd58cb3c540ce7b5062b0451f88"
+    },
+    {
+      "path": "libs/core/noise_plugin_intf_impl.cpp",
+      "sha256": "125b85a547911ff2c946c4cde76a0954a8b083dd4695d661fafe216f5c3aa612"
+    },
+    {
+      "path": "libs/core/hw_info_default.cpp",
+      "sha256": "c8d2409961bfdb1bf331f734f608330292f90264f6ecdd0da7ca05097f4adb99"
+    },
+    {
+      "path": "libs/dal/hw_events_interface.cpp",
+      "sha256": "9e9d18a6565554a0f66a9b1650506b4cf222552a62fd63d947a809cc7ed19719"
+    },
+    {
+      "path": "libs/dal/hw_color_manager_drm.h",
+      "sha256": "c1384fe773cf5a7e4cedbdd980abc59ae3ef8753631196bbe91254d19fb66452"
+    },
+    {
+      "path": "libs/dal/hw_tv_drm.h",
+      "sha256": "53296a2ef9abab15bb1324048ff508990dd3ccaa61b54e692231d1c11a8caca4"
+    },
+    {
+      "path": "libs/dal/hw_virtual_drm.cpp",
+      "sha256": "b699d59e4ded8b88310bda042dced5e3c6bc688bcf6e595463342dead7a685a8"
+    },
+    {
+      "path": "libs/dal/hw_info_drm.h",
+      "sha256": "562e6f212494e99a4b081e84f9b82afbd40bd436a43d518e42c44b7fa7133501"
+    },
+    {
+      "path": "libs/dal/hw_color_manager_drm.cpp",
+      "sha256": "2575be95df7cba5b06b4093045701072d738753c110bec664e26ec4aeae47f47"
+    },
+    {
+      "path": "libs/dal/hw_peripheral_drm.h",
+      "sha256": "d8bece65943d558df1d88e8bc0e424ae6a5c32185192bc2e8159bd4f3eef0a58"
+    },
+    {
+      "path": "libs/dal/hw_info_drm.cpp",
+      "sha256": "b011c9e14f9d8a7436d392a76c61bf1625a8b964ede6bb17912200b57f910d96"
+    },
+    {
+      "path": "libs/dal/Makefile.am",
+      "sha256": "b60e9325ad40fe505c03a074d363976bc8dc5967bf8ef5c1072778ccf284079d"
+    },
+    {
+      "path": "libs/dal/hw_peripheral_drm.cpp",
+      "sha256": "47dc9719f28ad68ea329041ecbf09049d843f4b442fe7148e43384245f390e50"
+    },
+    {
+      "path": "libs/dal/hw_virtual_drm.h",
+      "sha256": "4be997d48774932aca0a8860630177631ef5c2ab0397c82b5b440c09073aef63"
+    },
+    {
+      "path": "libs/dal/hw_tv_drm.cpp",
+      "sha256": "a843ebef8edd206ae367a0d31dc8d8a600829b91de6fdb8f6bea233945d8076c"
+    },
+    {
+      "path": "libs/dal/hw_info_interface.cpp",
+      "sha256": "ccfb0077281b1a07fe95c3572bab56fd5f05be2afb2c0fb281ef5769216368c4"
+    },
+    {
+      "path": "libs/dal/hw_scale_drm.cpp",
+      "sha256": "12a989e78f4c28309b976950d9e7d849b5a148fec6c3a6cc10159eb38343d217"
+    },
+    {
+      "path": "libs/dal/hw_events_drm.h",
+      "sha256": "22473727991e55cef03a108d4cb6cd0672d74c3aab93fbf5f8f0271e0966f69e"
+    },
+    {
+      "path": "libs/dal/hw_device_drm.h",
+      "sha256": "7a0a4da15361d88e6c38e49c90234557553ed67e568e9bbb353e331caec23d7d"
+    },
+    {
+      "path": "libs/dal/hw_events_drm.cpp",
+      "sha256": "ee25de451c9446ff96292992e8e72feb5e542b0b1672dc9b75e2c3daa4db0b07"
+    },
+    {
+      "path": "libs/dal/hw_interface.cpp",
+      "sha256": "50729948d25d6a21b6621e06f70f79930978d5ec9c98001532817fb1a95d3ce2"
+    },
+    {
+      "path": "libs/dal/hw_device_drm.cpp",
+      "sha256": "96f3aa25866c11b55c32f14d005f3bab918fdc13cfe2c7edb8634ac09778331b"
+    },
+    {
+      "path": "libs/dal/hw_scale_drm.h",
+      "sha256": "2adbec27885c8357bed9a22bad7b8e87605d26c126bbd3c5709b8b64244acf91"
+    }
+  ]
+}

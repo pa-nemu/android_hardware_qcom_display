@@ -756,8 +756,13 @@ void HWCDisplay::BuildLayerStack() {
     if (layer->input_buffer.usage &
         static_cast<uint64_t>(
             ::aidl::android::hardware::graphics::common::BufferUsage::FRONT_BUFFER)) {
+#ifdef SDM_COMMON_KAILUA_ABI
+      // The common extension cannot synchronize front-buffer device composition.
+      layer->flags.skip = true;
+#else
       layer->flags.front_buffer = true;
       layer_stack_.flags.front_buffer_layer_present = true;
+#endif
     }
 
     if (hwc_layer->IsSingleBuffered() &&
@@ -797,10 +802,12 @@ void HWCDisplay::BuildLayerStack() {
 
     // VTS case failure with solid layer dimming due to no support on pipe
     // TODO(user): Remove this when we add support for solid_fill in pipe
+#ifndef SDM_COMMON_KAILUA_ABI
     if (layer->flags.solid_fill && layer->layer_brightness != 1.0f) {
       layer->flags.skip = true;
       layer->flags.solid_fill = false;
     }
+#endif
 
     if (layer->flags.skip) {
       layer_stack_.flags.skip_present = true;
@@ -873,13 +880,17 @@ void HWCDisplay::BuildLayerStack() {
   layer_stack_.layers.push_back(sdm_client_target);
 
   layer_stack_.elapse_timestamp = elapse_timestamp_;
+#ifndef SDM_COMMON_KAILUA_ABI
   layer_stack_.expected_present_time = expected_present_time_;
+#endif
 
   layer_stack_.client_incompatible =
       dump_frame_count_ && (dump_output_to_file_ || dump_input_layers_);
   DLOGV_IF(kTagClient, "layer_stack_.client_incompatible : %d", layer_stack_.client_incompatible);
   ATRACE_INT("HDRPresent ", layer_stack_.flags.hdr_present ? 1 : 0);
+#ifndef SDM_COMMON_KAILUA_ABI
   ATRACE_INT("FrontBufferPresent ", layer_stack_.flags.front_buffer_layer_present ? 1 : 0);
+#endif
 }
 
 void HWCDisplay::BuildSolidFillStack() {
@@ -2644,7 +2655,10 @@ bool HWCDisplay::IsLayerUpdating(HWCLayer *hwc_layer) {
   //   d) layer stack geometry has changed (TODO(user): Remove when SDM accepts
   //      geometry_changed as bit fields), or
   //   e) layer is marked as video.
-  return (layer->flags.single_buffer || layer->flags.front_buffer ||
+  return (layer->flags.single_buffer ||
+#ifndef SDM_COMMON_KAILUA_ABI
+          layer->flags.front_buffer ||
+#endif
           hwc_layer->IsSurfaceUpdated() || hwc_layer->GetGeometryChanges() ||
           layer->input_buffer.flags.video);
 }

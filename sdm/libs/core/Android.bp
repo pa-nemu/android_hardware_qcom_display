@@ -40,7 +40,9 @@ cc_library_shared {
         default: [],
     }),
 
-    srcs: [
+    srcs: select(soong_config_variable("qtidisplay", "common_kailua_sdm"), {
+        true: [":qtidisplay_kailua_core_sources"],
+        default: [
         "core_interface.cpp",
         "core_impl.cpp",
         "display_base.cpp",
@@ -55,5 +57,6 @@ cc_library_shared {
         "color_manager.cpp",
         "hw_info_default.cpp",
     ],
+    }),
 
 }

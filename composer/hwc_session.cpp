@@ -184,7 +184,7 @@ void HWCSession::HpdThreadTop() {
   }
 
   while (1) {
-    char uevent_data[get_page_size()] = {};
+    char uevent_data[4096] = {};
 
     // keep last 2 zeros to ensure double 0 termination
     int length = uevent_next_event(uevent_data, INT32(sizeof(uevent_data)) - 2);
@@ -1472,11 +1472,19 @@ HWC3::Error HWCSession::CreateVirtualDisplayObj(uint32_t width, uint32_t height,
   core_intf_->GetMaxDisplaysSupported(kVirtual, &wb_count);
 
   if (wb_count) {
+#ifdef SDM_COMMON_KAILUA_ABI
+    for (auto &vdl : virtual_display_list_) {
+      display_id = GetVirtualDisplayId(vdl);
+      if (display_id != -1) break;
+    }
+    if (display_id == -1) return HWC3::Error::NoResources;
+#else
     // Request to get virtual display id corresponds writeback block, which could be used for WFD.
     auto err = core_intf_->RequestVirtualDisplayId(&display_id);
     if (err != kErrorNone || display_id == -1) {
       return HWC3::Error::NoResources;
     }
+#endif
   } else if (virtual_display_factory_.IsGPUColorConvertSupported()) {
     //checking property here, whether gpu color convert is supported.
     for (auto &vdl : virtual_display_list_) {

@@ -10,7 +10,9 @@ cc_library_shared {
 
     header_libs: ["display_headers"],
     cflags: ["-DLOG_TAG=\"SDM\""],
-    srcs: [
+    srcs: select(soong_config_variable("qtidisplay", "common_kailua_sdm"), {
+        true: [":qtidisplay_kailua_utils_sources"],
+        default: [
         "debug.cpp",
         "rect.cpp",
         "sys.cpp",
@@ -18,6 +20,7 @@ cc_library_shared {
         "formats.cpp",
         "utils.cpp",
     ],
+    }),
 
     shared_libs: ["libdisplaydebug"],
 }

@@ -3,6 +3,7 @@ soong_config_module_type {
     module_type: "cc_defaults",
     config_namespace: "qtidisplay",
     bool_variables: [
+        "common_kailua_sdm",
         "drmpp",
         "headless",
         "llvmsa",
@@ -129,6 +130,9 @@ qtidisplay_cc_defaults {
         "-android-cloexec-dup",
     ],
     soong_config_variables: {
+        common_kailua_sdm: {
+            cflags: ["-DSDM_COMMON_KAILUA_ABI"],
+        },
         drmpp: {
             cflags: ["-DPP_DRM_ENABLE"],
         },
@@ -289,11 +293,13 @@ cc_library_headers {
         "libqdutils",
         "libqservice",
         "gpu_tonemapper",
-        "sdm/include",
-        "sdm/libs/core",
+
         "gralloc",
         "libhistogram",
-    ],
+    ] + select(soong_config_variable("qtidisplay", "common_kailua_sdm"), {
+        true: ["common/kailua/sdm/include", "common/kailua/sdm/libs/core"],
+        default: ["sdm/include", "sdm/libs/core"],
+    }),
     header_libs: [
         "libhardware_headers",
         "display_intf_headers",
@@ -339,3 +345,52 @@ subdirs = [
     "qmaa",
     "oem_services",
 ]
+
+filegroup {
+    name: "qtidisplay_kailua_core_sources",
+    srcs: [
+        "common/kailua/sdm/libs/core/core_interface.cpp",
+        "common/kailua/sdm/libs/core/core_impl.cpp",
+        "common/kailua/sdm/libs/core/display_base.cpp",
+        "common/kailua/sdm/libs/core/display_builtin.cpp",
+        "common/kailua/sdm/libs/core/display_pluggable.cpp",
+        "common/kailua/sdm/libs/core/display_virtual.cpp",
+        "common/kailua/sdm/libs/core/display_null.cpp",
+        "common/kailua/sdm/libs/core/noise_plugin_intf_impl.cpp",
+        "common/kailua/sdm/libs/core/comp_manager.cpp",
+        "common/kailua/sdm/libs/core/strategy.cpp",
+        "common/kailua/sdm/libs/core/resource_default.cpp",
+        "common/kailua/sdm/libs/core/color_manager.cpp",
+        "common/kailua/sdm/libs/core/hw_info_default.cpp",
+        "common/kailua/abi_contract.cpp",
+    ],
+}
+
+filegroup {
+    name: "qtidisplay_kailua_dal_sources",
+    srcs: [
+        "common/kailua/sdm/libs/dal/hw_events_interface.cpp",
+        "common/kailua/sdm/libs/dal/hw_info_interface.cpp",
+        "common/kailua/sdm/libs/dal/hw_interface.cpp",
+        "common/kailua/sdm/libs/dal/hw_info_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_device_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_peripheral_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_tv_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_events_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_scale_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_virtual_drm.cpp",
+        "common/kailua/sdm/libs/dal/hw_color_manager_drm.cpp",
+    ],
+}
+
+filegroup {
+    name: "qtidisplay_kailua_utils_sources",
+    srcs: [
+        "common/kailua/sdm/libs/utils/debug.cpp",
+        "common/kailua/sdm/libs/utils/rect.cpp",
+        "common/kailua/sdm/libs/utils/sys.cpp",
+        "common/kailua/sdm/libs/utils/fence.cpp",
+        "common/kailua/sdm/libs/utils/formats.cpp",
+        "common/kailua/sdm/libs/utils/utils.cpp",
+    ],
+}

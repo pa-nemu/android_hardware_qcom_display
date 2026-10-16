@@ -1120,9 +1120,11 @@ HWC3::Error HWCDisplayBuiltIn::GetPanelMaxBrightness(uint32_t *max_brightness_le
 DisplayError HWCDisplayBuiltIn::SetBppMode(uint32_t bpp) {
   DisplayError error = kErrorNotSupported;
 
+#ifndef SDM_COMMON_KAILUA_ABI
   if (display_intf_) {
       error = display_intf_->SetBppMode(bpp);
   }
+#endif
 
   return error;
 }
@@ -1608,6 +1610,9 @@ HWC3::Error HWCDisplayBuiltIn::SetDemuraState(int state) {
 }
 
 HWC3::Error HWCDisplayBuiltIn::SetDemuraConfig(int demura_idx) {
+#ifdef SDM_COMMON_KAILUA_ABI
+  return HWC3::Error::Unsupported;
+#else
   DLOGV("Display ID: %" PRId64 " config: %d", id_, demura_idx);
   DisplayError error = display_intf_->SetDemuraConfig(demura_idx);
 
@@ -1619,6 +1624,7 @@ HWC3::Error HWCDisplayBuiltIn::SetDemuraConfig(int demura_idx) {
   callbacks_->Refresh(id_);
 
   return HWC3::Error::None;
+#endif
 }
 
 void HWCDisplayBuiltIn::HandleLargeCompositionHint(bool release) {

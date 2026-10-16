@@ -322,6 +322,7 @@ DisplayError ColorMetadataToDataspace(ColorMetaData color_metadata, Dataspace *d
   return kErrorNone;
 }
 
+#ifndef SDM_COMMON_KAILUA_ABI
 static bool IsSdrDimmingDisabled() {
   static bool read_prop = false;
   static bool disable_sdr_dimming = false;
@@ -333,6 +334,7 @@ static bool IsSdrDimmingDisabled() {
   read_prop = true;
   return disable_sdr_dimming;
 }
+#endif
 
 // Layer operations
 HWCLayer::HWCLayer(Display display_id, HWCBufferAllocator *buf_allocator)
@@ -859,6 +861,9 @@ HWC3::Error HWCLayer::SetLayerBrightness(float brightness) {
     return HWC3::Error::BadParameter;
   }
 
+#ifdef SDM_COMMON_KAILUA_ABI
+  return HWC3::Error::Unsupported;
+#else
   // When SDR dimming is disabled, layer brightness needs to be reset for device composition
   if (brightness != 1.0f && IsSdrDimmingDisabled() && client_requested_ == Composition::DEVICE) {
     brightness = 1.0f;
@@ -872,6 +877,7 @@ HWC3::Error HWCLayer::SetLayerBrightness(float brightness) {
   }
 
   return HWC3::Error::None;
+#endif
 }
 
 void HWCLayer::SetRect(const Rect &source, LayerRect *target) {
@@ -1037,9 +1043,11 @@ LayerBufferFormat HWCLayer::GetSDMFormat(const int32_t &source, const int flags)
     case static_cast<int>(PixelFormat::RGBA_FP16):
       format = kFormatRGBA16161616F;
       break;
+#ifndef SDM_COMMON_KAILUA_ABI
     case static_cast<int>(PixelFormat_V3::R_8):
       format = kFormatA8;
       break;
+#endif
     default:
       DLOGW("Unsupported format type = %d", source);
       return kFormatInvalid;

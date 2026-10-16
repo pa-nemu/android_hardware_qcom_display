@@ -101,6 +101,10 @@ void HWCDebugHandler::DebugIWE(bool enable, int verbose_level) {
 }
 
 void HWCDebugHandler::DebugWbUsage(bool enable, int verbose_level) {
+#ifdef SDM_COMMON_KAILUA_ABI
+  // The common SDM cohort has no writeback-usage debug category.
+  DebugDriverConfig(enable, verbose_level);
+#else
   if (enable) {
     debug_handler_.log_mask_[kTagWbUsage] = 1;
     debug_handler_.verbose_level_ = verbose_level;
@@ -110,6 +114,7 @@ void HWCDebugHandler::DebugWbUsage(bool enable, int verbose_level) {
   }
 
   DebugHandler::SetLogMask(debug_handler_.log_mask_);
+#endif
 }
 
 void HWCDebugHandler::DebugCompManager(bool enable, int verbose_level) {

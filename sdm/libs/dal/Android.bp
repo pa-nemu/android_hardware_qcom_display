@@ -22,7 +22,9 @@ cc_library_shared {
         "libsdedrm",
     ],
 
-    srcs: [
+    srcs: select(soong_config_variable("qtidisplay", "common_kailua_sdm"), {
+        true: [":qtidisplay_kailua_dal_sources"],
+        default: [
         "hw_events_interface.cpp",
         "hw_info_interface.cpp",
         "hw_interface.cpp",
@@ -35,5 +37,6 @@ cc_library_shared {
         "hw_virtual_drm.cpp",
         "hw_color_manager_drm.cpp",
     ],
+    }),
 
 }
